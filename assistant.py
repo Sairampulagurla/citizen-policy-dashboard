@@ -7,16 +7,19 @@ def ask_policy_question(policy_text, question):
 
     relevant_text = find_relevant_chunk(policy_text, question)
 
-    prompt = f"""
-    You are a helpful assistant explaining government policies to citizens.
-
-    Policy section:
-    {relevant_text}
-
-    Question:
+   prompt = f"""
+    You are a helpful assistant that explains government policies to citizens.
+    
+    The user may ask questions in different languages.
+    Always respond in the SAME language as the user's question.
+    
+    Policy Context:
+    {policy_text}
+    
+    User Question:
     {question}
-
-    Answer in simple language.
+    
+    Answer clearly and simply in the same language as the question.
     """
 
     response = client.chat.completions.create(
