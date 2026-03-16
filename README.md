@@ -181,6 +181,4 @@ http://localhost:8501
 
 ---
 
-## Author
 
-Sai Ram
