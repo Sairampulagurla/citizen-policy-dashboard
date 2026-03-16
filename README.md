@@ -89,6 +89,16 @@ Compressed Tokens: 3,073
 Token Reduction: 97.33%
 This significantly reduces token usage while preserving important information.
 
+## Installation & Running the Project
+### 1. Install required dependencies
+-pip install -r requirements.txt
+
+### 2. Run the application
+-streamlit run app.py
+
+### 4. Open the application in your browser
+-http://localhost:8501
+
 
 
 Author
