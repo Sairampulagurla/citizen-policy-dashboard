@@ -1,3 +1,4 @@
+import os
 from groq import Groq
 from retriever import find_relevant_chunk
 
@@ -5,7 +6,7 @@ client = Groq(api_key="*************")
 
 def ask_policy_question(policy_text, question):
 
-    relevant_text = find_relevant_chunk(policy_text, question)
+   relevant_text = find_relevant_chunk(policy_text, question)
 
    prompt = f"""
     You are a helpful assistant that explains government policies to citizens.
