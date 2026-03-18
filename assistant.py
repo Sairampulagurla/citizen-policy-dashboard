@@ -2,7 +2,7 @@ import os
 from groq import Groq
 from retriever import find_relevant_chunk
 
-client = Groq(api_key="*************")
+client = Groq(api_key=os.getenv("*************"))
 
 def ask_policy_question(policy_text, question):
 
@@ -10,17 +10,19 @@ def ask_policy_question(policy_text, question):
 
    prompt = f"""
 You are a helpful assistant that explains government policies to citizens.
-       
-The user may ask questions in different languages.
-Always respond in the SAME language as the user's question.
-       
+
+Default response language is English.
+
+If the user asks the question in another language OR explicitly requests a specific language,
+then respond in that language.
+
 Policy Context:
 {policy_text}
-       
+
 User Question:
 {question}
-       
-Answer clearly and simply in the same language as the question.
+
+Answer clearly and simply.
 """
 
    response = client.chat.completions.create(
