@@ -1,6 +1,6 @@
 from groq import Groq
-
-client = Groq(api_key="****************")
+import os
+client = Groq(api_key=os.getenv("*************"))
 
 def generate_summary(text):
 
