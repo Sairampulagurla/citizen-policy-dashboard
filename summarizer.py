@@ -1,8 +1,9 @@
 from groq import Groq
 import os
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
 def generate_summary(text):
+    client = Groq(api_key=st.secrets["GROQ_API_KEY"])
     
 
     prompt = f"""
