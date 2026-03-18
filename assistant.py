@@ -17,7 +17,7 @@ If the user asks the question in another language OR explicitly requests a speci
 then respond in that language.
 
 Policy Context:
-{policy_text}
+{relevant_text}
 
 User Question:
 {question}
@@ -26,7 +26,7 @@ Answer clearly and simply.
 """
 
    response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama3-8b-8192",
         messages=[{"role": "user", "content": prompt}]
     )
 
